@@ -30,28 +30,30 @@ class ViewController: UIViewController {
     }
     
     func sumar() -> Int {
-        guard
-        let myFirstVal = firstVal.text,
-        let mySecondVal = secondVal.text,
-        let myInt1 = Int(myFirstVal),
-        let myInt2 = Int(mySecondVal)
-        else { return 0 }
-        let resul = myInt1 + myInt2
+        let resul = comprobarOne() + comprobarTwo()
         return resul
     
     }
     
     func resta() -> Int {
+        let resul = comprobarOne() - comprobarTwo()
+        return resul
+    }
+    
+    func comprobarOne()->Int {
         guard
         let myFirstVal = firstVal.text,
-        let mySecondVal = secondVal.text,
-        let myInt1 = Int(myFirstVal),
-        let myInt2 = Int(mySecondVal)
+        let myInt1 = Int(myFirstVal)
         else { return 0 }
-        let resul = myInt1 - myInt2
-        return resul
-    
+        return myInt1
     }
    
+    func comprobarTwo()->Int {
+        guard
+        let mySecondVal = secondVal.text,
+        let myInt2 = Int(mySecondVal)
+        else { return 0 }
+        return myInt2
+    }
 }
 
